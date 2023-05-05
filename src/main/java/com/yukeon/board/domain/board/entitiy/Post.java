@@ -4,6 +4,8 @@ import com.yukeon.board.global.common.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,6 +21,9 @@ public class Post extends BaseEntity {
 
     @Column(nullable = false)
     private String content;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<RelatedPost> relatedPosts = new ArrayList<>();
 
     @Column(nullable = false)
     private boolean isDeleted;

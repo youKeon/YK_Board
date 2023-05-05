@@ -25,6 +25,11 @@ public class RelatedPost extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     private Post post;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Post relatedPost;
+
+    private Integer similarity;
+
     @Builder
     public RelatedPost(Long id,
                 String title,
