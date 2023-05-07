@@ -38,4 +38,8 @@ public class Post extends BaseEntity {
         this.content = content;
         this.isDeleted = false;
     }
+
+    public void addRelatedPost(List<RelatedPost> relatedPost) {
+        this.relatedPosts = relatedPost;
+    }
 }

@@ -9,13 +9,13 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-public class GetPostListDto {
-    private String content;
+public class PostListDto {
+    private String title;
     private LocalDateTime createdAt;
 
-    public static GetPostListDto from(Post post) {
-        return new GetPostListDto(
-                post.getContent(),
+    public static PostListDto from(Post post) {
+        return new PostListDto(
+                post.getTitle(),
                 post.getCreatedAt()
         );
     }
